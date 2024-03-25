@@ -34,8 +34,8 @@ RUN chmod +x mc
 RUN mv ./mc /usr/local/bin
 
 # oc
-COPY oc.tar .
-RUN tar -xf oc.tar
+ADD oc.tar .
+# RUN tar -xf oc.tar
 RUN chmod +x oc && mv oc /usr/local/bin
 
 # user
