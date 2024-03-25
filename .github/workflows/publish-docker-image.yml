@@ -18,10 +18,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Set up Git LFS
-        run: git lfs install
-      - name: Pull LFS files
-        run: git lfs pull
+        with:
+          lfs: true
+
+      - name: Install Git LFS
+        run: sudo apt-get install git-lfs
+
+      - name: fetch Git LFS
+        run: git lfs fetch --all
+
+      - name: checkout LFS files
+        run: git lfs checkout
+
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
         with:
