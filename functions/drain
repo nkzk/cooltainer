@@ -1,0 +1,9 @@
+drain=""
+#!/bin/sh 
+if [[ "$#" -eq 1 ]];
+then
+    echo "Draining"
+    oc adm drain --ignore-daemonsets --delete-emptydir-data $1
+else
+    echo "Illegal number of arguments. Include node as argument"
+fi

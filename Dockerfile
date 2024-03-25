@@ -8,6 +8,9 @@ ENV HOME=/home/cooltainer
 RUN mkdir -p /home/cooltainer/.kube && mkdir -p /home/cooltainer/.mc
 RUN chgrp -R 0 /home/cooltainer && \
     chmod -R g+rwX /home/cooltainer
+COPY functions ./functions
+RUN chmod -R +x functions/*
+RUN mv functions/* /usr/local/bin
 
 # packages
 RUN apk add --no-cache \

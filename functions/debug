@@ -1,0 +1,8 @@
+#!/bin/sh 
+if [[ "$#" -eq 1 ]];
+then
+    echo "Starting"
+    oc run -i -t --rm --image=ghcr.io/nkzk/cooltainer:latest debug -n $1
+else
+    echo "Illegal number of arguments. Include namespace as argument"
+fi
