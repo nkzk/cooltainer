@@ -5,7 +5,7 @@ WORKDIR /home/cooltainer
 
 ENV HOME=/home/cooltainer
 
-RUN mkdir /home/cooltainer && chgrp -R 0 /home/cooltainer && \
+RUN chgrp -R 0 /home/cooltainer && \
     chmod -R g+rwX /home/cooltainer
 
 # packages
