@@ -34,6 +34,4 @@ ENV HOME=/home/cooltainer
 USER cooltainer
 
 # entrypoint
-ENTRYPOINT ["/bin/sh"]
-#CMD ["tail", "-f", "/dev/null"]
-
+CMD ["sh", "-c", "tail -f /dev/null"]
