@@ -37,7 +37,8 @@ RUN mv ./mc /usr/local/bin
 ADD oc.tar .
 # RUN tar -xf oc.tar
 RUN chmod +x oc && mv oc /usr/local/bin
-
+RUN chgrp -R 0 /usr/local/bin/oc && \
+    chmod -R g+rwX /usr/local/bin/oc
 # user
 RUN addgroup -S cooltainer && adduser -S cooltainer -G cooltainer
 ENV HOME=/home/cooltainer
