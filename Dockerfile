@@ -28,11 +28,6 @@ RUN curl https://dl.min.io/client/mc/release/linux-amd64/mc --create-dirs -o mc
 RUN chmod +x mc 
 RUN mv ./mc /usr/local/bin
 
-# oc
-COPY oc.tar .
-RUN tar -xf oc.tar && mv oc /usr/local/bin
-RUN rm oc.tar
-
 # user
 RUN addgroup -S cooltainer && adduser -S cooltainer -G cooltainer
 ENV HOME=/home/cooltainer
