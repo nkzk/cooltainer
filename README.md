@@ -1,24 +1,32 @@
-# OpenShift Clients
+# Cooltainer
 
-The OpenShift client `oc` simplifies working with Kubernetes and OpenShift
-clusters, offering a number of advantages over `kubectl` such as easy login,
-kube config file management, and access to developer tools. The `kubectl`
-binary is included alongside for when strict Kubernetes compliance is necessary.
+Container with tools for common tasks or debugging.
 
-To learn more about OpenShift, visit [docs.openshift.com](https://docs.openshift.com)
-and select the version of OpenShift you are using.
 
-## Installing the tools
+Start shell:
 
-After extracting this archive, move the `oc` and `kubectl` binaries
-to a location on your PATH such as `/usr/local/bin`. Then run:
+```
+namespace=default
+kubectl -n $namespace run -it cooltainer --image=ghcr.io/nkzk/cooltainer:latest /bin/sh
+```
 
-    oc login [API_URL]
+Start up pod with YAML:
 
-to start a session against an OpenShift cluster. After login, run `oc` and
-`oc help` to learn more about how to get started with OpenShift.
-
-## License
-
-OpenShift is licensed under the Apache Public License 2.0. The source code for this
-program is [located on github](https://github.com/openshift/oc).
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: cooltainer
+  name: cooltainer
+  namespace: default
+spec:
+  containers:
+  - image: ghcr.io/nkzk/cooltainer:latest
+    name: cooltainer
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+```
