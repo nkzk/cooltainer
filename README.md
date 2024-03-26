@@ -16,17 +16,19 @@ Start up pod with YAML:
 apiVersion: v1
 kind: Pod
 metadata:
-  creationTimestamp: null
+  name: debug
   labels:
-    run: cooltainer
-  name: cooltainer
+    app: debug
   namespace: default
 spec:
+  securityContext:
+    runAsNonRoot: true
   containers:
-  - image: ghcr.io/nkzk/cooltainer:latest
-    name: cooltainer
-    resources: {}
-  dnsPolicy: ClusterFirst
-  restartPolicy: Always
-status: {}
+    - name: debug
+      image: 'ghcr.io/nkzk/cooltainer:latest'
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
 ```
