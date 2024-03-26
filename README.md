@@ -1,7 +1,13 @@
 # Cooltainer
 
-Container with tools for common tasks or debugging.
+Container with tools for common tasks or debugging:
 
+- sh/bash shells
+- curl
+- wget
+- kubectl
+- oc
+- mc
 
 Start shell:
 
