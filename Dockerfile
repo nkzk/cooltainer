@@ -41,10 +41,10 @@ RUN chmod +x oc && mv oc /usr/local/bin
 RUN chgrp -R 0 /usr/local/bin/oc && \
     chmod -R g+rwX /usr/local/bin/oc
 # user
-RUN addgroup -S cooltainer && adduser -S cooltainer -G cooltainer
+RUN addgroup -S cooltainer && adduser -S cooltainer -G cooltainer -u 1234
 ENV HOME=/home/cooltainer
 
-USER cooltainer
+USER 1234
 
 # entrypoint
 CMD ["sh", "-c", "tail -f /dev/null"]
