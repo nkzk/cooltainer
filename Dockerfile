@@ -4,6 +4,7 @@ FROM alpine
 WORKDIR /home/cooltainer
 
 ENV HOME=/home/cooltainer
+ENV VIRTCTL_VERSION="v1.1.0"
 
 RUN mkdir -p /home/cooltainer/.kube && mkdir -p /home/cooltainer/.mc
 RUN chgrp -R 0 /home/cooltainer && \
@@ -11,6 +12,12 @@ RUN chgrp -R 0 /home/cooltainer && \
 COPY functions ./functions
 RUN chmod -R +x functions/*
 RUN mv functions/* /usr/local/bin
+
+# virtctl
+RUN wget https://github.com/kubevirt/kubevirt/releases/download/${VIRTCTL_VERSION}/virtctl-${VIRTCTL_VERSION}-linux-amd64
+
+RUN chmod +x virtctl-${VIRTCTL_VERSION}-linux-amd64
+RUN mv virtctl-${VIRTCTL_VERSION}-linux-amd64 /usr/local/bin/virtctl
 
 # packages
 RUN apk add --no-cache \
