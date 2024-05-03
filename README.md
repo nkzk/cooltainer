@@ -8,6 +8,7 @@ Container with tools for common tasks or debugging:
 - kubectl
 - oc
 - mc
+- ssh
 
 Start shell:
 
