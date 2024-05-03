@@ -34,6 +34,7 @@ spec:
     - name: debug
       image: 'ghcr.io/nkzk/cooltainer:latest'
       securityContext:
+        runAsGroup: 0
         seccompProfile:
           type: RuntimeDefault
         allowPrivilegeEscalation: false
