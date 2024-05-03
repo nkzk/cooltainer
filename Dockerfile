@@ -45,6 +45,14 @@ RUN chgrp -R 0 /usr/local/bin/oc && \
 RUN addgroup -S cooltainer && adduser -S cooltainer -G cooltainer -u 1234
 ENV HOME=/home/cooltainer
 
+RUN chgrp -R 0 /home/cooltainer && \
+    chmod -R g=u /home/cooltainer
+
+
+RUN mkdir -p /home/cooltainer/.ssh
+RUN chgrp -R 0 home/cooltainer/.ssh && \
+    chmod -R g=u home/cooltainer/.ssh
+
 USER 1234
 
 # entrypoint
