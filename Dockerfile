@@ -12,7 +12,9 @@ RUN chgrp -R 0 /home/cooltainer && \
 COPY functions ./functions
 RUN chmod -R +x functions/*
 RUN mv functions/* /usr/local/bin
-
+RUN mkdir -p /.ssh
+RUN chgrp -R 0 /.ssh && \
+    chmod -R g+rwX /.ssh
 # virtctl
 RUN wget https://github.com/kubevirt/kubevirt/releases/download/${VIRTCTL_VERSION}/virtctl-${VIRTCTL_VERSION}-linux-amd64
 
