@@ -50,8 +50,8 @@ RUN chgrp -R 0 /home/cooltainer && \
 
 
 RUN mkdir -p /home/cooltainer/.ssh
-RUN chgrp -R 0 home/cooltainer/.ssh && \
-    chmod -R g=u home/cooltainer/.ssh
+RUN chgrp -R 0 /home/cooltainer/.ssh && \
+    chmod -R g=u /home/cooltainer/.ssh
 
 USER 1234
 
