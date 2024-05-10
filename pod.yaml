@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug
+  labels:
+    app: debug
+spec:
+  securityContext:
+    runAsNonRoot: true
+  containers:
+    - name: debug
+      image: 'ghcr.io/nkzk/cooltainer:latest'
+      resources:
+        requests:
+          cpu: 10m
+          memory: 50Mi
+        limits:
+          memory: 250Mi
+      securityContext:
+        runAsGroup: 0
+        seccompProfile:
+          type: RuntimeDefault
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
