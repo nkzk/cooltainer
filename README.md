@@ -5,10 +5,16 @@ Container with tools for common tasks or debugging:
 - sh/bash shells
 - curl
 - wget
+- tar
+- traceroute
+- openssh
+- traceroute
+- net-tools
+- netcat
+- freeradius-utils
 - kubectl
 - oc
 - mc
-- ssh
 
 Start shell:
 
