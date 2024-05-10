@@ -34,7 +34,8 @@ RUN apk add --no-cache \
     gcompat \
     traceroute \
     openssh \
-    netcat
+    net-tools \
+    netcat-openbsd
 # kubectl
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 RUN chmod +x ./kubectl
