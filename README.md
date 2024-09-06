@@ -41,6 +41,12 @@ spec:
   containers:
     - name: debug
       image: 'ghcr.io/nkzk/cooltainer:latest'
+      resources:
+        requests:
+          cpu: 5m
+          memory: 50Mi
+        limits:
+          memory: 250Mi
       securityContext:
         runAsGroup: 0
         seccompProfile:
