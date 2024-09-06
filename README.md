@@ -15,6 +15,8 @@ Container with tools for common tasks or debugging:
 - kubectl
 - oc
 - mc
+- nats tools
+- go:1.23
 
 Start shell:
 

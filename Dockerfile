@@ -1,6 +1,5 @@
 FROM alpine
 
-
 WORKDIR /home/cooltainer
 
 ENV HOME=/home/cooltainer
@@ -15,6 +14,12 @@ RUN mv functions/* /usr/local/bin
 RUN mkdir -p /.ssh
 RUN chgrp -R 0 /.ssh && \
     chmod -R g+rwX /.ssh
+
+# install go
+COPY --from=golang:1.23-alpine /usr/local/go/ /usr/local/go/
+ 
+ENV PATH="/usr/local/go/bin:${PATH}"
+
 # virtctl
 RUN wget https://github.com/kubevirt/kubevirt/releases/download/${VIRTCTL_VERSION}/virtctl-${VIRTCTL_VERSION}-linux-amd64
 
@@ -25,6 +30,8 @@ RUN mv virtctl-${VIRTCTL_VERSION}-linux-amd64 /usr/local/bin/virtctl
 RUN apk add --no-cache \
     curl \
     wget \
+    figlet \
+    jq \
     tar \
     bash \
     bash-completion \
@@ -37,6 +44,14 @@ RUN apk add --no-cache \
     net-tools \
     netcat-openbsd \
     freeradius-utils
+
+# nats
+RUN <<EOT
+    go install -ldflags="-X main.version=v2.8.8" github.com/nats-io/nsc/v2@2.8.8
+    go install github.com/nats-io/nats-top@latest
+    go install github.com/nats-io/natscli/nats@latest
+EOT
+
 # kubectl
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 RUN chmod +x ./kubectl
@@ -48,8 +63,9 @@ RUN chmod +x mc
 RUN mv ./mc /usr/local/bin
 
 # oc
-ADD oc.tar .
-# RUN tar -xf oc.tar
+RUN curl https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/linux/oc.tar.gz -o oc.tar
+RUN tar -xf oc.tar
+
 RUN chmod +x oc && mv oc /usr/local/bin
 RUN chgrp -R 0 /usr/local/bin/oc && \
     chmod -R g+rwX /usr/local/bin/oc
@@ -64,6 +80,9 @@ RUN chgrp -R 0 /home/cooltainer && \
 RUN mkdir -p /home/cooltainer/.ssh
 RUN chgrp -R 0 /home/cooltainer/.ssh && \
     chmod -R g=u /home/cooltainer/.ssh
+
+COPY profile.sh /etc/profile.d
+RUN chmod +x /etc/profile.d/profile.sh
 
 USER 1234
 
