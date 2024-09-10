@@ -41,7 +41,8 @@ RUN apk add --no-cache \
     openssh \
     net-tools \
     netcat-openbsd \
-    freeradius-utils
+    freeradius-utils \
+    tzdata
 
 # nats
 RUN <<EOT
