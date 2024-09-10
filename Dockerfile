@@ -6,8 +6,6 @@ ENV HOME=/home/cooltainer
 ENV VIRTCTL_VERSION="v1.1.0"
 
 RUN mkdir -p /home/cooltainer/.kube && mkdir -p /home/cooltainer/.mc
-RUN chgrp -R 0 /home/cooltainer && \
-    chmod -R g+rwX /home/cooltainer
 COPY functions ./functions
 RUN chmod -R +x functions/*
 RUN mv functions/* /usr/local/bin
@@ -73,13 +71,12 @@ RUN chgrp -R 0 /usr/local/bin/oc && \
 RUN addgroup -S cooltainer && adduser -S cooltainer -G cooltainer -u 1234
 ENV HOME=/home/cooltainer
 
+RUN mkdir -p /home/cooltainer/.ssh
+RUN mkdir -p /home/cooltainer/.cache
+RUN mkdir -p /home/cooltainer/go
+
 RUN chgrp -R 0 /home/cooltainer && \
     chmod -R g=u /home/cooltainer
-
-
-RUN mkdir -p /home/cooltainer/.ssh
-RUN chgrp -R 0 /home/cooltainer/.ssh && \
-    chmod -R g=u /home/cooltainer/.ssh
 
 COPY profile.sh /etc/profile.d
 RUN chmod +x /etc/profile.d/profile.sh
