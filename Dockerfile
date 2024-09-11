@@ -43,7 +43,8 @@ RUN apk add --no-cache \
     netcat-openbsd \
     freeradius-utils \
     tzdata \
-    vim
+    vim \
+    chrony
 
 # nats
 RUN <<EOT
