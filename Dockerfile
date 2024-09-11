@@ -43,7 +43,7 @@ RUN apk add --no-cache \
     netcat-openbsd \
     freeradius-utils \
     tzdata \
-    vim \
+    vim
 # nats
 RUN <<EOT
     go install -ldflags="-X main.version=v2.8.8" github.com/nats-io/nsc/v2@2.8.8
