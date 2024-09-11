@@ -44,7 +44,7 @@ RUN apk add --no-cache \
     freeradius-utils \
     tzdata \
     vim \
-    chrony
+    sntpc
 
 # nats
 RUN <<EOT
