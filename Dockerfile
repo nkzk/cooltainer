@@ -42,7 +42,8 @@ RUN apk add --no-cache \
     net-tools \
     netcat-openbsd \
     freeradius-utils \
-    tzdata
+    tzdata \
+    vim
 
 # nats
 RUN <<EOT
@@ -81,6 +82,8 @@ RUN chgrp -R 0 /home/cooltainer && \
 
 COPY profile.sh /etc/profile.d
 RUN chmod +x /etc/profile.d/profile.sh
+
+RUN rm README.md
 
 USER 1234
 
