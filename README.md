@@ -1,33 +1,71 @@
 # Cooltainer
 
-Container with tools for common tasks or debugging:
+Container with tools for common tasks or debugging.  For full list of tools, check [./Dockerfile](https://github.com/nkzk/cooltainer/blob/main/Dockerfile#L28)
 
-- sh/bash shells
-- curl
-- wget
-- tar
-- traceroute
-- openssh
-- traceroute
-- net-tools
-- netcat
-- freeradius-utils
-- kubectl
-- oc
-- mc
-- nats tools
-- go:1.23
+## Usage
 
-Start shell:
+### docker 
 
+```sh
+docker run -it ghcr.io/nkzk/cooltainer -- /bin/sh
 ```
+
+### kubectl
+```sh
 namespace=default
 kubectl -n $namespace run -it cooltainer --image=ghcr.io/nkzk/cooltainer:latest /bin/sh
 ```
 
-Start up pod with YAML:
+### Manifests
 
+#### Kubernetes: Bare minimum
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug
+  labels:
+    app: debug
+  namespace: default
+spec:
+  containers:
+    - name: debug
+      image: 'ghcr.io/nkzk/cooltainer:latest'
+      resources:
+        requests:
+          cpu: 5m
+          memory: 50Mi
+        limits:
+          memory: 250Mi
 ```
+
+#### Kubernetes: run as group 0
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug
+  labels:
+    app: debug
+  namespace: default
+spec:
+  containers:
+    - name: debug
+      image: 'ghcr.io/nkzk/cooltainer:latest'
+      resources:
+        requests:
+          cpu: 5m
+          memory: 50Mi
+        limits:
+          memory: 250Mi
+      securityContext:
+        runAsGroup: 0
+```
+
+#### Openshift: with security context (drop all capabilities)
+
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -48,7 +86,6 @@ spec:
         limits:
           memory: 250Mi
       securityContext:
-        runAsGroup: 0
         seccompProfile:
           type: RuntimeDefault
         allowPrivilegeEscalation: false
@@ -56,3 +93,23 @@ spec:
           drop:
             - ALL
 ```
+
+#### .bashrc debugpod shortcut/alias
+
+Add this to `~/.bashrc`
+
+```sh
+debugpod(){
+      if [[ "$#" -eq 1 ]];
+      then
+        echo "Starting"
+        kubectl run -i -t --rm --image=ghcr.io/nkzk/cooltainer:latest --restart=Never debug -n $1 -- /bin/sh
+      else
+        echo "Illegal number of arguments. Include namespace as argument"
+      fi
+    }
+```
+
+Source .bashrc: `. ~/.bashrc`
+
+Start debugpod with `debugpod`
