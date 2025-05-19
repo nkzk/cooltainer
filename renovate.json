@@ -2,5 +2,16 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
-  ]
+  ],
+  "timezone": "Europe/Amsterdam",
+  "schedule": "before 5pm every weekday",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": "before 5pm every weekday"
+  },
+  "packageRules": [{
+    "packageNames": ["*"],
+    "schedule": "before 5pm every weekday",
+    "automerge": true
+  }]
 }
