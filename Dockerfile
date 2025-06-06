@@ -14,7 +14,7 @@ RUN chgrp -R 0 /.ssh && \
     chmod -R g+rwX /.ssh
 
 # install go
-COPY --from=golang:1.23-alpine /usr/local/go/ /usr/local/go/
+COPY --from=golang:1.24-alpine /usr/local/go/ /usr/local/go/
  
 ENV PATH="/usr/local/go/bin:${PATH}"
 
