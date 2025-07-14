@@ -13,6 +13,12 @@ ARG VIRTCTL_VERSION=v1.5.2
 # renovate: datasource=github-releases depName=nats-io/nsc versioning=loose
 ARG NSC_VERSION=v2.8.8
 
+# renovate: datasource=github-releases depName=nats-io/nats-top versioning=loose
+ARG NATSTOP_VERSION=v0.6.3
+
+# renovate: datasource=github-releases depName=nats-io/natscli versioning=loose
+ARG NATSCLI_VERSION=v0.2.3
+
 # renovate: datasource=github-releases depName=minio/mc versioning=loose
 ARG MC_VERSION=RELEASE.2025-05-21T01-59-54Z
 
@@ -128,9 +134,9 @@ RUN apk add --no-cache \
 
 # install nats
 RUN <<EOT
-    go install -ldflags="-X main.version=v2.8.8" github.com/nats-io/nsc/v2@2.8.8
-    go install github.com/nats-io/nats-top@latest
-    go install github.com/nats-io/natscli/nats@latest
+    go install -ldflags="-X main.version=${NSC_VERSION}" github.com/nats-io/nsc/v2@${NSC_VERSION}
+    go install github.com/nats-io/nats-top@${NATSTOP_VERSION}
+    go install github.com/nats-io/natscli/nats@${NATSCLI_VERSION}
 EOT
 
 # install kubectl
