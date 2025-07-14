@@ -1,7 +1,8 @@
-FROM alpine:3.22.0
-
 # renovate: datasource=golang-version depName=golang
 ARG GOLANG_VERSION=1.24
+FROM golang:${GOLANG_VERSION}-alpine AS go
+
+FROM alpine:3.22.0
 
 # renovate: datasource=github-releases packageName=kubevirt/kubevirt
 ARG VIRTCTL_VERSION=v1.5.2
@@ -18,64 +19,58 @@ ARG KUBECTL_VERSION=v1.30.2
 ARG OC_VERSION=latest
 
 # renovate: datasource=repology depName=alpine_3_22/curl versioning=loose
-ARG CURL_VERSION=7.88.1-r0
+ARG CURL_VERSION=8.14.1-r1
 
 # renovate: datasource=repology depName=alpine_3_22/wget versioning=loose
-ARG WGET_VERSION=1.21.4-r0
+ARG WGET_VERSION=1.25.0-r1
 
 # renovate: datasource=repology depName=alpine_3_22/figlet versioning=loose
-ARG FIGLET_VERSION=2.2.5_alpha-r2
+ARG FIGLET_VERSION=2.2.5-r3
 
 # renovate: datasource=repology depName=alpine_3_22/jq versioning=loose
-ARG JQ_VERSION=1.6-r0
+ARG JQ_VERSION=1.8.0-r0
 
 # renovate: datasource=repology depName=alpine_3_22/tar versioning=loose
-ARG TAR_VERSION=1.34-r1
+ARG TAR_VERSION=1.35-r3
 
 # renovate: datasource=repology depName=alpine_3_22/bash versioning=loose
-ARG BASH_VERSION=5.2.15-r0
-
-# renovate: datasource=repology depName=alpine_3_22/bash_completion versioning=loose
-ARG BASH_COMPLETION_VERSION=2.12-r0
-
-# renovate: datasource=repology depName=alpine_3_22/bash_doc versioning=loose
-ARG BASH_DOC_VERSION=5.2.15-r0
+ARG BASH_VERSION=5.2.37-r0
 
 # renovate: datasource=repology depName=alpine_3_22/coreutils versioning=loose
-ARG COREUTILS_VERSION=9.2.0-r0
+ARG COREUTILS_VERSION=9.7-r1
 
-# renovate: datasource=repology depName=alpine_3_22/ca_certificates versioning=loose
-ARG CA_CERTIFICATES_VERSION=20230506-r0
+# renovate: datasource=repology depName=alpine_3_22/ca-certificates versioning=loose
+ARG CA_CERTIFICATES_VERSION=20241121-r2
 
 # renovate: datasource=repology depName=alpine_3_22/gcompat versioning=loose
-ARG GCOMPAT_VERSION=1.4.0-r3
+ARG GCOMPAT_VERSION=1.1.0-r4
 
 # renovate: datasource=repology depName=alpine_3_22/traceroute versioning=loose
-ARG TRACEROUTE_VERSION=2.1.0-r3
+ARG TRACEROUTE_VERSION=2.1.6-r0
 
 # renovate: datasource=repology depName=alpine_3_22/openssh versioning=loose
-ARG OPENSSH_VERSION=9.4_p1-r0
+ARG OPENSSH_VERSION=10.0_p1-r7
 
-# renovate: datasource=repology depName=alpine_3_22/nettools versioning=loose
-ARG NETTOOLS_VERSION=2.11-r2
+# renovate: datasource=repology depName=alpine_3_22/net-tools versioning=loose
+ARG NETTOOLS_VERSION=2.10-r3
 
-# renovate: datasource=repology depName=alpine_3_22/netcat_openbsd versioning=loose
-ARG NETCAT_OPENBSD_VERSION=1.217-r2
+# renovate: datasource=repology depName=alpine_3_22/netcat-openbsd versioning=loose
+ARG NETCAT_OPENBSD_VERSION=1.229.1-r0
 
-# renovate: datasource=repology depName=alpine_3_22/freeradius_utils versioning=loose
-ARG FREERADIUS_UTILS_VERSION=3.0.23-r1
+# renovate: datasource=repology depName=alpine_3_22/freeradius-utils versioning=loose
+ARG FREERADIUS_UTILS_VERSION=3.0.27-r1
 
 # renovate: datasource=repology depName=alpine_3_22/tzdata versioning=loose
-ARG TZDATA_VERSION=2023a-r0
+ARG TZDATA_VERSION=2025b-r0
 
 # renovate: datasource=repology depName=alpine_3_22/vim versioning=loose
-ARG VIM_VERSION=9.0.0219-r0
+ARG VIM_VERSION=9.1.1415-r0
 
 # renovate: datasource=repology depName=alpine_3_22/rclone versioning=loose
-ARG RCLONE_VERSION=1.62.3-r0
+ARG RCLONE_VERSION=1.69.3-r0
 
-# renovate: datasource=repology depName=alpine_3_22/postgresql versioning=loose
-ARG POSTGRESQL_VERSION=15.3-r0
+# renovate: datasource=repology depName=alpine_3_22/postgresql16 versioning=loose
+ARG POSTGRESQL_VERSION=16.9-r0
 
 
 WORKDIR /home/cooltainer
@@ -101,7 +96,7 @@ COPY functions/* /usr/local/bin/
 RUN chmod -R +x /usr/local/bin/*
 
 # install go
-COPY --from=golang:${GOLANG_VERSION}-alpine /usr/local/go/ /usr/local/go/
+COPY --from=go /usr/local/go/ /usr/local/go/
 
 ENV PATH="/usr/local/go/bin:${PATH}"
 
@@ -118,8 +113,6 @@ RUN apk add --no-cache \
     jq=${JQ_VERSION} \
     tar=${TAR_VERSION} \
     bash=${BASH_VERSION} \
-    bash-completion=${BASH_COMPLETION_VERSION} \
-    bash-doc=${BASH_DOC_VERSION} \
     coreutils=${COREUTILS_VERSION} \
     ca-certificates=${CA_CERTIFICATES_VERSION} \
     gcompat=${GCOMPAT_VERSION} \
@@ -131,7 +124,7 @@ RUN apk add --no-cache \
     tzdata=${TZDATA_VERSION} \
     vim=${VIM_VERSION} \
     rclone=${RCLONE_VERSION} \
-    postgresql=${POSTGRESQL_VERSION}
+    postgresql16=${POSTGRESQL_VERSION}
 
 # install nats
 RUN <<EOT
@@ -141,7 +134,7 @@ RUN <<EOT
 EOT
 
 # install kubectl
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 RUN chmod +x ./kubectl
 RUN mv ./kubectl /usr/local/bin
 
