@@ -1,6 +1,29 @@
 # Cooltainer
 
-Container with tools for common tasks or debugging.  For full list of tools, check [./Dockerfile](https://github.com/nkzk/cooltainer/blob/main/Dockerfile#L28)
+Container with useful tools for developers and platform-engineers.
+
+Made to run without issues in rootless environments like OpenShift.
+
+Contains the following tools:
+- oc (openshift-cli)
+- kubectl
+- virtctl
+- nats cli/nsc/top
+- mc (minio-client)
+- curl
+- wget
+- jq
+- tar
+- bash
+- traceroute
+- openssh
+- netcat
+- freeradius
+- vim
+- rclone
+- postgresl16
+
+For an up to date list of available tools, check [./Dockerfile](https://github.com/nkzk/cooltainer/blob/main/Dockerfile).
 
 ## Usage
 
