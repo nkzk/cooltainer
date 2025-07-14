@@ -4,19 +4,19 @@ FROM golang:${GOLANG_VERSION}-alpine AS go
 
 FROM alpine:3.22.0
 
-# renovate: datasource=github-tags packageName=openshift/oc versioning=loose extractVersion=^openshift-clients-(?<version>[\d.]+)-.*$
+# renovate: datasource=github-tags depName=openshift/oc versioning=loose extractVersion=^openshift-clients-(?<version>[\d.]+)-.*$
 ARG OC_VERSION="4.19.4"
 
-# renovate: datasource=github-releases packageName=kubevirt/kubevirt versioning=loose
+# renovate: datasource=github-releases depName=kubevirt/kubevirt versioning=loose
 ARG VIRTCTL_VERSION=v1.5.2
 
-# renovate: datasource=github-releases packageName=nats-io/nsc
+# renovate: datasource=github-releases depName=nats-io/nsc
 ARG NSC_VERSION=v2.8.8
 
-# renovate: datasource=github-releases packageName=minio/mc
+# renovate: datasource=github-releases depName=minio/mc
 ARG MC_VERSION=RELEASE.2025-05-21T01-59-54Z
 
-# renovate: datasource=github-releases packageName=kubernetes/kubectl versioning=loose
+# renovate: datasource=github-releases depName=kubernetes/kubectl versioning=loose
 ARG KUBECTL_VERSION=v1.30.2
 
 # renovate: datasource=repology depName=alpine_3_22/curl versioning=loose
