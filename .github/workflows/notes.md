@@ -29,6 +29,7 @@ and then update `.token` field in release-please action:
   - Metadata - readonly (mandatory)
   - Contents - read/write
   - Pull Requests - read/write
+  - Issues - read/write
 
 **3:** note app-id
 

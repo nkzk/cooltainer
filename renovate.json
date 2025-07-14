@@ -3,6 +3,7 @@
   "extends": ["config:recommended"],
   "timezone": "UTC",
   "schedule": ["before 5am on Monday"],
+  "commitMessagePrefix": "fix",
   "customManagers": [
     {
       "fileMatch": ["Dockerfile"],
