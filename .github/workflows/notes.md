@@ -45,6 +45,7 @@ In `.github\{action}.yml`:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 ```
 
 In Github project:
