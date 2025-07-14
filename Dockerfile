@@ -19,8 +19,6 @@ ARG MC_VERSION=RELEASE.2025-05-21T01-59-54Z
 # renovate: datasource=github-releases packageName=kubernetes/kubernetes
 ARG KUBECTL_VERSION=v1.30.2
 
-ARG OC_VERSION=latest
-
 # renovate: datasource=repology depName=alpine_3_22/curl versioning=loose
 ARG CURL_VERSION=8.14.1-r1
 
@@ -74,7 +72,6 @@ ARG RCLONE_VERSION=1.69.3-r0
 
 # renovate: datasource=repology depName=alpine_3_22/postgresql16 versioning=loose
 ARG POSTGRESQL_VERSION=16.9-r0
-
 
 WORKDIR /home/cooltainer
 
