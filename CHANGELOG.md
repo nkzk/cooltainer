@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0](https://github.com/nkzk/cooltainer/compare/v0.0.45...v0.1.0) (2025-07-14)
+
+
+### Features
+* **renovate:** add commitMessagePrefix:fix ([6e78c1c](https://github.com/nkzk/cooltainer/commit/6e78c1c0ea1b34bd47f68ddd0432ceb657049542))
+* **renovate:** add commitMessagePrefix:fix ([6152ee8](https://github.com/nkzk/cooltainer/commit/6152ee8de6a5f06d9f251fd8020dfb2c94f18279))
+
 ## [0.0.45](https://github.com/nkzk/cooltainer/compare/v0.0.44...v0.0.45) (2025-07-14)
 
 
