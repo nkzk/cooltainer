@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/nkzk/cooltainer/compare/v0.1.0...v0.1.1) (2025-07-14)
+
+
+### Bug Fixes
+
+* correctly unpack oc binary ([5d2a86a](https://github.com/nkzk/cooltainer/commit/5d2a86a9b33c18027f020c02814c73f401899515))
+
 ## [0.1.0](https://github.com/nkzk/cooltainer/compare/v0.0.45...v0.1.0) (2025-07-14)
 
 
