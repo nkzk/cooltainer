@@ -1,8 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
-  "timezone": "UTC",
-  "schedule": ["before 5am on Monday"],
+  "timezone": "Europe/Amsterdam",
+  "schedule": ["before 5pm on Wednesday"],
   "commitMessagePrefix": "fix:",
   "customManagers": [
     {
