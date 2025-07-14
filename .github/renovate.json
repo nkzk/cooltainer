@@ -7,6 +7,7 @@
   "customManagers": [
     {
       "fileMatch": ["Dockerfile"],
+      "description": "Update alpine packages",
       "matchStrings": [
         "# renovate: datasource=repology depName=alpine_(?<currentValue>\\d+[._]\\d+)"
       ],
@@ -36,6 +37,10 @@
       "matchDatasources": ["github-releases"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
+    },
+    {
+      "matchPackageNames": ["openshift/oc"],
+      "extractVersion": "^openshift-clients-(?<version>[\\d.]+)-.*$!"
     }
   ]
 }

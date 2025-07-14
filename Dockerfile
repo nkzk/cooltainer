@@ -4,8 +4,8 @@ FROM golang:${GOLANG_VERSION}-alpine AS go
 
 FROM alpine:3.22.0
 
-# renovate: datasource=github-tags depName=openshift/oc versioning=loose extractVersion=^openshift-clients-(?<version>[\d.]+)-.*$
-ARG OC_VERSION=4.19.4
+# renovate: datasource=repology depName=homebrew/openshift-cli versioning=loose
+ARG OC_VERSION=4.19.2
 
 # renovate: datasource=github-tags depName=kubevirt/kubevirt versioning=loose
 ARG VIRTCTL_VERSION=v1.5.2
