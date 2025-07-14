@@ -4,6 +4,9 @@ FROM golang:${GOLANG_VERSION}-alpine AS go
 
 FROM alpine:3.22.0
 
+# renovate: datasource=github-tags packageName=openshift/oc versioning=loose extractVersion=^openshift-clients-(?<version>[\d.]+)-.*$
+ARG OC_VERSION="4.19.4"
+
 # renovate: datasource=github-releases packageName=kubevirt/kubevirt
 ARG VIRTCTL_VERSION=v1.5.2
 
@@ -139,13 +142,12 @@ RUN chmod +x ./kubectl
 RUN mv ./kubectl /usr/local/bin
 
 # install mc
-
 RUN curl https://dl.min.io/client/mc/release/linux-amd64/archive/mc.${MC_VERSION} --create-dirs -o mc
 RUN chmod +x mc 
 RUN mv ./mc /usr/local/bin
 
 # install oc
-RUN curl https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/linux/oc.tar.gz -o oc.tar
+RUN curl https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/${OC_VERSION}/oc-mirror.tar.gz -o oc.tar
 RUN tar -xf oc.tar
 
 RUN chmod +x oc && mv oc /usr/local/bin
