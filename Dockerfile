@@ -11,7 +11,7 @@ ARG OC_VERSION=4.19.2
 ARG VIRTCTL_VERSION=v1.5.2
 
 # renovate: datasource=github-releases depName=nats-io/nsc versioning=loose
-ARG NSC_VERSION=v2.8.8
+ARG NSC_VERSION=v2.11.0
 
 # renovate: datasource=github-releases depName=nats-io/nats-top versioning=loose
 ARG NATSTOP_VERSION=v0.6.3
