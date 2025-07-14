@@ -19,10 +19,7 @@
     {
       "customType": "regex",
       "description": "Update _VERSION variables in Dockerfiles",
-      "fileMatch": [
-        "/(^|/|\\.)Dockerfile$/",
-        "/(^|/)Dockerfile\\.[^/]*$/"
-      ],
+      "fileMatch": ["/(^|/|\\.)Dockerfile$/", "/(^|/)Dockerfile\\.[^/]*$/"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?\\s(?:ENV|ARG) .+?_VERSION=(?<currentValue>.+?)\\s"
       ],
@@ -39,7 +36,7 @@
   ],
   "packageRules": [
     {
-      "managers": ["regex"],
+      "matchManagers": ["custom.regex"],
       "matchUpdateTypes": ["patch", "minor"],
       "automerge": true
     }
