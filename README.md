@@ -41,7 +41,7 @@ kubectl -n $namespace run -it cooltainer --image=ghcr.io/nkzk/cooltainer:latest 
 
 ### Manifests
 
-#### Kubernetes: Bare minimum
+#### Kubernetes: Bare minimum with resource requests/limits
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -49,7 +49,7 @@ metadata:
   name: debug
   labels:
     app: debug
-  namespace: default
+  namespace: default # update this
 spec:
   containers:
     - name: debug
@@ -59,34 +59,12 @@ spec:
           cpu: 5m
           memory: 50Mi
         limits:
-          memory: 250Mi
-```
-
-#### Kubernetes: run as group 0
-
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: debug
-  labels:
-    app: debug
-  namespace: default
-spec:
-  containers:
-    - name: debug
-      image: 'ghcr.io/nkzk/cooltainer:latest'
-      resources:
-        requests:
-          cpu: 5m
-          memory: 50Mi
-        limits:
-          memory: 250Mi
-      securityContext:
-        runAsGroup: 0
+          memory: 250Mi # increase if doing memory-intensive tasks
 ```
 
 #### Openshift: with security context (drop all capabilities)
+
+Run as nonroot in OpenShift
 
 ```yaml
 apiVersion: v1
@@ -107,7 +85,7 @@ spec:
           cpu: 5m
           memory: 50Mi
         limits:
-          memory: 250Mi
+          memory: 250Mi # increase if doing memory-intensive tasks
       securityContext:
         seccompProfile:
           type: RuntimeDefault
@@ -117,7 +95,34 @@ spec:
             - ALL
 ```
 
-#### .bashrc debugpod shortcut/alias
+#### Kubernetes: run as group 0
+
+By default OpenShift runs images with a user with group-id 0. The dockerfile is optimized for this. To avoid issues - run it with group-id in other distributions.
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug
+  labels:
+    app: debug
+  namespace: default
+spec:
+  containers:
+    - name: debug
+      image: 'ghcr.io/nkzk/cooltainer:latest'
+      resources:
+        requests:
+          cpu: 5m
+          memory: 50Mi
+        limits:
+          memory: 250Mi # increase if doing memory-intensive tasks
+      securityContext:
+        runAsGroup: 0
+```
+
+
+#### Quickly start a debug-pod just by running `debugpod`
 
 Add this to `~/.bashrc`
 
@@ -135,4 +140,4 @@ debugpod(){
 
 Source .bashrc: `. ~/.bashrc`
 
-Start debugpod with `debugpod`
+You can now start a debug-pod in your current kubectl context using the alias/shortcut `debugpod`.
