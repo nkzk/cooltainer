@@ -73,7 +73,7 @@ metadata:
   name: debug
   labels:
     app: debug
-  namespace: default
+  namespace: default # update this
 spec:
   securityContext:
     runAsNonRoot: true
@@ -106,7 +106,7 @@ metadata:
   name: debug
   labels:
     app: debug
-  namespace: default
+  namespace: default # update this
 spec:
   containers:
     - name: debug
