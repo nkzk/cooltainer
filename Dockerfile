@@ -1,14 +1,7 @@
 # renovate: datasource=golang-version depName=golang
 ARG GOLANG_VERSION=1.24
+
 FROM golang:${GOLANG_VERSION}-alpine AS go
-
-FROM alpine:3.22.0
-
-# renovate: datasource=repology depName=homebrew/openshift-cli versioning=loose
-ARG OC_VERSION=4.19.2
-
-# renovate: datasource=github-tags depName=kubevirt/kubevirt versioning=loose
-ARG VIRTCTL_VERSION=v1.5.2
 
 # renovate: datasource=github-releases depName=nats-io/nsc versioning=loose
 ARG NSC_VERSION=v2.8.8
@@ -18,6 +11,23 @@ ARG NATSTOP_VERSION=v0.6.3
 
 # renovate: datasource=github-releases depName=nats-io/natscli versioning=loose
 ARG NATSCLI_VERSION=v0.2.3
+
+RUN go install -ldflags="-X main.version=${NSC_VERSION}" github.com/nats-io/nsc/v2@${NSC_VERSION} && \
+    go install github.com/nats-io/nats-top@${NATSTOP_VERSION} && \
+    go install github.com/nats-io/natscli/nats@${NATSCLI_VERSION}
+
+FROM alpine:3.22.0
+
+COPY --from=go /go/bin/nsc /usr/local/bin/nsc
+COPY --from=go /go/bin/nats-top /usr/local/bin/nats-top
+COPY --from=go /go/bin/nats /usr/local/bin/nats
+
+# renovate: datasource=repology depName=homebrew/openshift-cli versioning=loose
+ARG OC_VERSION=4.19.2
+
+# renovate: datasource=github-tags depName=kubevirt/kubevirt versioning=loose
+ARG VIRTCTL_VERSION=v1.5.2
+
 
 # renovate: datasource=github-releases depName=minio/mc versioning=loose
 ARG MC_VERSION=RELEASE.2025-05-21T01-59-54Z
@@ -84,15 +94,14 @@ WORKDIR /home/cooltainer
 # rootless shenanigans
 RUN addgroup -S cooltainer && adduser -S cooltainer -G cooltainer -u 1234
 ENV HOME=/home/cooltainer
-RUN mkdir -p /home/cooltainer/.kube && mkdir -p /home/cooltainer/.mc
-RUN mkdir -p /.ssh
-RUN chgrp -R 0 /.ssh && \
-    chmod -R g+rwX /.ssh
-
-
-RUN mkdir -p /home/cooltainer/.ssh
-RUN mkdir -p /home/cooltainer/.cache
-RUN mkdir -p /home/cooltainer/go
+RUN mkdir -p /home/cooltainer/.kube && \
+    mkdir -p /home/cooltainer/.mc && \
+    mkdir -p /.ssh && \
+    chgrp -R 0 /.ssh && \
+    chmod -R g+rwX /.ssh && \
+    mkdir -p /home/cooltainer/.ssh && \
+    mkdir -p /home/cooltainer/.cache && \
+    mkdir -p /home/cooltainer/go
 
 RUN chgrp -R 0 /home/cooltainer && \
     chmod -R g=u /home/cooltainer
@@ -107,9 +116,9 @@ COPY --from=go /usr/local/go/ /usr/local/go/
 ENV PATH="/usr/local/go/bin:${PATH}"
 
 # install virtctl
-RUN wget https://github.com/kubevirt/kubevirt/releases/download/${VIRTCTL_VERSION}/virtctl-${VIRTCTL_VERSION}-linux-amd64
-RUN chmod +x virtctl-${VIRTCTL_VERSION}-linux-amd64
-RUN mv virtctl-${VIRTCTL_VERSION}-linux-amd64 /usr/local/bin/virtctl
+RUN wget https://github.com/kubevirt/kubevirt/releases/download/${VIRTCTL_VERSION}/virtctl-${VIRTCTL_VERSION}-linux-amd64 && \
+    chmod +x virtctl-${VIRTCTL_VERSION}-linux-amd64 && \
+    mv virtctl-${VIRTCTL_VERSION}-linux-amd64 /usr/local/bin/virtctl
 
 # install packages
 RUN apk add --no-cache \
@@ -132,30 +141,24 @@ RUN apk add --no-cache \
     rclone=${RCLONE_VERSION} \
     postgresql16=${POSTGRESQL_VERSION}
 
-# install nats
-RUN <<EOT
-    go install -ldflags="-X main.version=${NSC_VERSION}" github.com/nats-io/nsc/v2@${NSC_VERSION}
-    go install github.com/nats-io/nats-top@${NATSTOP_VERSION}
-    go install github.com/nats-io/natscli/nats@${NATSCLI_VERSION}
-EOT
-
 # install kubectl
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
-RUN chmod +x ./kubectl
-RUN mv ./kubectl /usr/local/bin
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl && \
+    chmod +x ./kubectl && \
+    mv ./kubectl /usr/local/bin
 
 # install mc
-RUN curl https://dl.min.io/client/mc/release/linux-amd64/archive/mc.${MC_VERSION} --create-dirs -o mc
-RUN chmod +x mc 
-RUN mv ./mc /usr/local/bin
+RUN curl https://dl.min.io/client/mc/release/linux-amd64/archive/mc.${MC_VERSION} --create-dirs -o mc && \
+    chmod +x mc && \
+    mv ./mc /usr/local/bin
 
 # install oc
-RUN curl https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/${OC_VERSION}/oc-mirror.tar.gz -o oc.tar.gz
-RUN tar -xzvf oc.tar.gz
-RUN mv oc-mirror oc
-RUN chmod +x oc && mv oc /usr/local/bin
-RUN chgrp -R 0 /usr/local/bin/oc && \
-    chmod -R g+rwX /usr/local/bin/oc
+RUN curl https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/${OC_VERSION}/oc-mirror.tar.gz -o oc.tar.gz && \
+    tar -xzvf oc.tar.gz && \
+    mv oc-mirror oc && \
+    chmod +x oc && mv oc /usr/local/bin && \
+    chgrp -R 0 /usr/local/bin/oc && \
+    chmod -R g+rwX /usr/local/bin/oc && \
+    rm oc.tar.gz
 
 # profile
 COPY profile.sh /etc/profile.d
