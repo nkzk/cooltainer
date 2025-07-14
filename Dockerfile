@@ -144,9 +144,9 @@ RUN chmod +x mc
 RUN mv ./mc /usr/local/bin
 
 # install oc
-RUN curl https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/${OC_VERSION}/oc-mirror.tar.gz -o oc.tar
-RUN tar -xf oc.tar
-
+RUN curl https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/${OC_VERSION}/oc-mirror.tar.gz -o oc.tar.gz
+RUN tar -xzvf oc.tar.gz
+RUN mv oc-mirror oc
 RUN chmod +x oc && mv oc /usr/local/bin
 RUN chgrp -R 0 /usr/local/bin/oc && \
     chmod -R g+rwX /usr/local/bin/oc
@@ -154,8 +154,6 @@ RUN chgrp -R 0 /usr/local/bin/oc && \
 # profile
 COPY profile.sh /etc/profile.d
 RUN chmod +x /etc/profile.d/profile.sh
-
-RUN rm README.md
 
 # entrypoint
 USER 1234
