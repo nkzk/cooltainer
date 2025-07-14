@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2](https://github.com/nkzk/cooltainer/compare/v0.1.1...v0.1.2) (2025-07-14)
+
+
+### Bug Fixes
+
+* Update actions/create-github-app-token action to v2 ([e3e09d6](https://github.com/nkzk/cooltainer/commit/e3e09d669170b5fd04dc421301c71a4305f21527))
+* Update dependency nats-io/nsc to v2.11.0 ([c3b9229](https://github.com/nkzk/cooltainer/commit/c3b92292cda031e49cb99fc39df220b219e6c276))
+
 ## [0.1.1](https://github.com/nkzk/cooltainer/compare/v0.1.0...v0.1.1) (2025-07-14)
 
 
