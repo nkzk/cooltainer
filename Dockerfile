@@ -16,7 +16,7 @@ ARG NSC_VERSION=v2.8.8
 # renovate: datasource=github-releases depName=minio/mc versioning=loose
 ARG MC_VERSION=RELEASE.2025-05-21T01-59-54Z
 
-# renovate: datasource=github-releases depName=kubernetes/kubectl versioning=loose
+# renovate: datasource=github-tags depName=kubernetes/kubectl versioning=loose
 ARG KUBECTL_VERSION=v1.30.2
 
 # renovate: datasource=repology depName=alpine_3_22/curl versioning=loose
