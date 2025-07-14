@@ -5,15 +5,15 @@ FROM golang:${GOLANG_VERSION}-alpine AS go
 FROM alpine:3.22.0
 
 # renovate: datasource=github-tags depName=openshift/oc versioning=loose extractVersion=^openshift-clients-(?<version>[\d.]+)-.*$
-ARG OC_VERSION="4.19.4"
+ARG OC_VERSION=4.19.4
 
-# renovate: datasource=github-releases depName=kubevirt/kubevirt versioning=loose
+# renovate: datasource=github-tags depName=kubevirt/kubevirt versioning=loose
 ARG VIRTCTL_VERSION=v1.5.2
 
-# renovate: datasource=github-releases depName=nats-io/nsc
+# renovate: datasource=github-releases depName=nats-io/nsc versioning=loose
 ARG NSC_VERSION=v2.8.8
 
-# renovate: datasource=github-releases depName=minio/mc
+# renovate: datasource=github-releases depName=minio/mc versioning=loose
 ARG MC_VERSION=RELEASE.2025-05-21T01-59-54Z
 
 # renovate: datasource=github-releases depName=kubernetes/kubectl versioning=loose
