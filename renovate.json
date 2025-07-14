@@ -1,17 +1,44 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
+  "extends": ["config:recommended"],
+  "timezone": "UTC",
+  "schedule": ["before 5am on Monday"],
+  "customManagers": [
+    {
+      "fileMatch": ["Dockerfile"],
+      "matchStrings": [
+        "# renovate: datasource=repology depName=alpine_(?<currentValue>\\d+[._]\\d+)"
+      ],
+      "currentValueTemplate": "{{{ replace '_' '.' currentValue }}}",
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "docker.io/library/alpine",
+      "versioningTemplate": "regex:^(?<major>\\d+)[._](?<minor>\\d+)$",
+      "autoReplaceStringTemplate": "# renovate: datasource=repology depName=alpine_{{{newMajor}}}_{{{newMinor}}}",
+      "customType": "regex"
+    },
+    {
+      "customType": "regex",
+      "description": "Update _VERSION variables in Dockerfiles",
+      "fileMatch": ["/(^|/|\\.)Dockerfile$/", "/(^|/)Dockerfile\\.[^/]*$/"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?\\s(?:ENV|ARG) .+?_VERSION=(?<currentValue>.+?)\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["/^Dockerfile$/"],
+      "matchStrings": [
+        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
   ],
-  "timezone": "Europe/Amsterdam",
-  "schedule": "before 5pm every weekday",
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": "before 5pm every weekday"
-  },
-  "packageRules": [{
-    "packageNames": ["*"],
-    "schedule": "before 5pm every weekday",
-    "automerge": true
-  }]
+  "packageRules": [
+    {
+      "matchManagers": ["custom.regex"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true
+    }
+  ]
 }
