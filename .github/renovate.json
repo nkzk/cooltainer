@@ -3,11 +3,6 @@
   "extends": [
     "config:best-practices"
   ],
-  "gitAuthor": "github-actions[bot] <67420785+github-actions[bot]@users.noreply.github.com>",
-  "gitIgnoredAuthors": [
-    "67420785+github-actions[bot]@users.noreply.github.com",
-    "github-actions[bot]@users.noreply.github.com"
-  ],
   "labels": [
     "dependencies"
   ],
