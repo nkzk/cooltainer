@@ -17,7 +17,6 @@
         "/Dockerfile/"
       ],
       "description": "Update alpine packages",
-      "pinDigests": false,
       "matchStrings": [
         "# renovate: datasource=repology depName=alpine_(?<currentValue>\\d+[._]\\d+)"
       ],
@@ -31,7 +30,6 @@
     {
       "customType": "regex",
       "description": "Update _VERSION variables in Dockerfiles",
-      "pinDigests": false,
       "managerFilePatterns": [
         "/(^|/|\\.)Dockerfile$/",
         "/(^|/)Dockerfile\\.[^/]*$/"
