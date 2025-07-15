@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/nkzk/cooltainer/compare/v0.1.2...v0.1.3) (2025-07-15)
+
+
+### Bug Fixes
+
+* optimize docker-image size ([ec7ec43](https://github.com/nkzk/cooltainer/commit/ec7ec43ed64156758e9267dd68f97992ff77ca66))
+
 ## [0.1.2](https://github.com/nkzk/cooltainer/compare/v0.1.1...v0.1.2) (2025-07-14)
 
 
