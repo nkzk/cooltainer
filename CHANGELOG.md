@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/nkzk/cooltainer/compare/v0.1.4...v0.1.5) (2025-07-15)
+
+
+### Bug Fixes
+
+* update CA_CERTIFICATES_VERSION ([de06d4f](https://github.com/nkzk/cooltainer/commit/de06d4f2087d626bcee84d545d727989e85cb050))
+
 ## [0.1.4](https://github.com/nkzk/cooltainer/compare/v0.1.3...v0.1.4) (2025-07-15)
 
 
