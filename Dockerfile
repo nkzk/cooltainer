@@ -16,7 +16,7 @@ RUN go install -ldflags="-X main.version=${NSC_VERSION}" github.com/nats-io/nsc/
     go install github.com/nats-io/nats-top@${NATSTOP_VERSION} && \
     go install github.com/nats-io/natscli/nats@${NATSCLI_VERSION}
 
-FROM alpine:3.22.0
+FROM alpine:3.22.1
 
 COPY --from=go /go/bin/nsc /usr/local/bin/nsc
 COPY --from=go /go/bin/nats-top /usr/local/bin/nats-top
