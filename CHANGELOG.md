@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/nkzk/cooltainer/compare/v0.1.3...v0.1.4) (2025-07-15)
+
+
+### Bug Fixes
+
+* migrate config .github/renovate.json ([5b8acdd](https://github.com/nkzk/cooltainer/commit/5b8acddb26a50b339b90f5b045feb68dd53593d4))
+
 ## [0.1.3](https://github.com/nkzk/cooltainer/compare/v0.1.2...v0.1.3) (2025-07-15)
 
 
