@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.6](https://github.com/nkzk/cooltainer/compare/v0.1.5...v0.1.6) (2025-07-16)
+
+
+### Bug Fixes
+
+* Pin dependencies ([9693340](https://github.com/nkzk/cooltainer/commit/969334099fb932ea64ac864bebe317a3698644da))
+* Update alpine Docker tag to v3.22.1 ([5716b1b](https://github.com/nkzk/cooltainer/commit/5716b1bf49fda38701179a248b11b2b24e6784a2))
+* Update dependency homebrew/openshift-cli to v4.19.3 ([#37](https://github.com/nkzk/cooltainer/issues/37)) ([79b5917](https://github.com/nkzk/cooltainer/commit/79b59177d2b10171f699f200b79504c58a82dee9))
+
 ## [0.1.5](https://github.com/nkzk/cooltainer/compare/v0.1.4...v0.1.5) (2025-07-15)
 
 
