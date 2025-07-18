@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/nkzk/cooltainer/compare/v0.1.6...v0.1.7) (2025-07-18)
+
+
+### Bug Fixes
+
+* Update dependency nats-io/natscli to v0.2.4 ([#38](https://github.com/nkzk/cooltainer/issues/38)) ([fa46ab0](https://github.com/nkzk/cooltainer/commit/fa46ab05d5a61507a0afee8487088dda9d61d646))
+
 ## [0.1.6](https://github.com/nkzk/cooltainer/compare/v0.1.5...v0.1.6) (2025-07-16)
 
 
