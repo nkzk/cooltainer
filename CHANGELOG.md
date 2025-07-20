@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8](https://github.com/nkzk/cooltainer/compare/v0.1.7...v0.1.8) (2025-07-20)
+
+
+### Bug Fixes
+
+* Update dependency alpine_3_22/vim to v9.1.1566-r0 ([#40](https://github.com/nkzk/cooltainer/issues/40)) ([2d95d9c](https://github.com/nkzk/cooltainer/commit/2d95d9cbc8eb898a61ddcd164abc0e6e3275b5c7))
+
 ## [0.1.7](https://github.com/nkzk/cooltainer/compare/v0.1.6...v0.1.7) (2025-07-18)
 
 
