@@ -81,7 +81,7 @@ ARG FREERADIUS_UTILS_VERSION=3.0.27-r1
 ARG TZDATA_VERSION=2025b-r0
 
 # renovate: datasource=repology depName=alpine_3_22/vim versioning=loose
-ARG VIM_VERSION=9.1.1415-r0
+ARG VIM_VERSION=9.1.1566-r0
 
 # renovate: datasource=repology depName=alpine_3_22/rclone versioning=loose
 ARG RCLONE_VERSION=1.69.3-r0
