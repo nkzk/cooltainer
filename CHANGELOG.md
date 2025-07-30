@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.9](https://github.com/nkzk/cooltainer/compare/v0.1.8...v0.1.9) (2025-07-30)
+
+
+### Bug Fixes
+
+* Update dependency homebrew/openshift-cli to v4.19.4 ([#42](https://github.com/nkzk/cooltainer/issues/42)) ([bdf2e60](https://github.com/nkzk/cooltainer/commit/bdf2e60970c0edbaab81e9679964034f5f582881))
+* Update dependency homebrew/openshift-cli to v4.19.5 ([#44](https://github.com/nkzk/cooltainer/issues/44)) ([d0f58ca](https://github.com/nkzk/cooltainer/commit/d0f58caa56d1b1a8ff361c54dff1598e5d0cc484))
+
 ## [0.1.8](https://github.com/nkzk/cooltainer/compare/v0.1.7...v0.1.8) (2025-07-20)
 
 
