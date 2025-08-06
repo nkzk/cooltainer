@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.11](https://github.com/nkzk/cooltainer/compare/v0.1.10...v0.1.11) (2025-08-06)
+
+
+### Bug Fixes
+
+* Update dependency kubevirt/kubevirt to v1.6.0 ([#48](https://github.com/nkzk/cooltainer/issues/48)) ([fbd4a86](https://github.com/nkzk/cooltainer/commit/fbd4a8691aba0e5de98202dbb89a23c159e018b7))
+
 ## [0.1.10](https://github.com/nkzk/cooltainer/compare/v0.1.9...v0.1.10) (2025-08-06)
 
 
