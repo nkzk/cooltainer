@@ -84,7 +84,7 @@ ARG TZDATA_VERSION=2025b-r0
 ARG VIM_VERSION=9.1.1566-r0
 
 # renovate: datasource=repology depName=alpine_3_22/rclone versioning=loose
-ARG RCLONE_VERSION=1.69.3-r0
+ARG RCLONE_VERSION=1.69.3-r1
 
 # renovate: datasource=repology depName=alpine_3_22/postgresql16 versioning=loose
 ARG POSTGRESQL_VERSION=16.9-r0
