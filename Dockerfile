@@ -4,7 +4,7 @@ ARG GOLANG_VERSION=1.24
 FROM golang:${GOLANG_VERSION}-alpine AS go
 
 # renovate: datasource=github-releases depName=nats-io/nsc versioning=loose
-ARG NSC_VERSION=v2.11.0
+ARG NSC_VERSION=v2.11.1
 
 # renovate: datasource=github-releases depName=nats-io/nats-top versioning=loose
 ARG NATSTOP_VERSION=v0.6.3
