@@ -87,7 +87,7 @@ ARG VIM_VERSION=9.1.1566-r0
 ARG RCLONE_VERSION=1.69.3-r1
 
 # renovate: datasource=repology depName=alpine_3_22/postgresql16 versioning=loose
-ARG POSTGRESQL_VERSION=16.9-r0
+ARG POSTGRESQL_VERSION=16.10-r0
 
 WORKDIR /home/cooltainer
 
