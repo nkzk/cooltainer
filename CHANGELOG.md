@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.1.11](https://github.com/nkzk/cooltainer/compare/v0.1.10...v0.1.11) (2025-08-24)
+
+
+### Bug Fixes
+
+* Update actions/checkout action to v5 ([d319111](https://github.com/nkzk/cooltainer/commit/d319111239a3662529318f0c15b79dbb4858c13e))
+* Update actions/create-github-app-token digest to a8d6161 ([81a032f](https://github.com/nkzk/cooltainer/commit/81a032ff1621f0edc086eea58f7a75830d45e50b))
+* Update dependency alpine_3_22/postgresql16 to v16.10-r0 ([#58](https://github.com/nkzk/cooltainer/issues/58)) ([560345c](https://github.com/nkzk/cooltainer/commit/560345c74544430df2c09c574017e6c4b3199618))
+* Update dependency alpine_3_22/rclone to v1.69.3-r1 ([#54](https://github.com/nkzk/cooltainer/issues/54)) ([e81b809](https://github.com/nkzk/cooltainer/commit/e81b80943f97113e097cc455024e0e5a454ad0b7))
+* Update dependency homebrew/openshift-cli to v4.19.7 ([#55](https://github.com/nkzk/cooltainer/issues/55)) ([90b1bdb](https://github.com/nkzk/cooltainer/commit/90b1bdb79abd9efef5d5ec8e7cfdaa3ac1e0cc0e))
+* Update dependency kubevirt/kubevirt to v1.6.0 ([#48](https://github.com/nkzk/cooltainer/issues/48)) ([fbd4a86](https://github.com/nkzk/cooltainer/commit/fbd4a8691aba0e5de98202dbb89a23c159e018b7))
+* Update dependency nats-io/nsc to v2.11.1 ([#57](https://github.com/nkzk/cooltainer/issues/57)) ([821a649](https://github.com/nkzk/cooltainer/commit/821a649f8a8b735aabb91259ca104533bb3b3ecd))
+* Update docker/build-push-action digest to ccc2b40 ([d7ab282](https://github.com/nkzk/cooltainer/commit/d7ab2825bf465816ddff3729bca92d4f7bbf22c5))
+* Update docker/login-action digest to 184bdaa ([72a624a](https://github.com/nkzk/cooltainer/commit/72a624a6802a9e821f745227fc7dc61da90505f1))
+* Update googleapis/release-please-action digest to c2a5a2b ([ee1975a](https://github.com/nkzk/cooltainer/commit/ee1975a579d939ca49c35d8ca1a05bb8a81ef50b))
+
 ## [0.1.10](https://github.com/nkzk/cooltainer/compare/v0.1.9...v0.1.10) (2025-08-06)
 
 
