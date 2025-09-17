@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.12](https://github.com/nkzk/cooltainer/compare/v0.1.11...v0.1.12) (2025-09-17)
+
+
+### Bug Fixes
+
+* Update dependency alpine_3_22/rclone to v1.69.3-r2 ([#64](https://github.com/nkzk/cooltainer/issues/64)) ([11bc915](https://github.com/nkzk/cooltainer/commit/11bc915320750e2da9d00884afb10d6e814a041e))
+* Update dependency homebrew/openshift-cli to v4.19.10 ([#65](https://github.com/nkzk/cooltainer/issues/65)) ([96d312b](https://github.com/nkzk/cooltainer/commit/96d312b22495a4cedb7ea3416dcd20af46152eac))
+* Update dependency homebrew/openshift-cli to v4.19.11 ([#67](https://github.com/nkzk/cooltainer/issues/67)) ([c63599f](https://github.com/nkzk/cooltainer/commit/c63599f57ddd6fea2933714aa5843bb3eec3e67f))
+* Update dependency homebrew/openshift-cli to v4.19.9 ([34996bb](https://github.com/nkzk/cooltainer/commit/34996bb5c89ac9bc68943331254d6416770dbaa8))
+
 ## [0.1.11](https://github.com/nkzk/cooltainer/compare/v0.1.10...v0.1.11) (2025-08-24)
 
 
