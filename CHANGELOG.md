@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.1.12](https://github.com/nkzk/cooltainer/compare/v0.1.11...v0.1.12) (2025-09-24)
+
+
+### Bug Fixes
+
+* Update actions/create-github-app-token digest to 6701853 ([2e74a1b](https://github.com/nkzk/cooltainer/commit/2e74a1b506f76083db6559b99ecb4bff66d57113))
+* Update dependency alpine_3_22/rclone to v1.69.3-r2 ([#64](https://github.com/nkzk/cooltainer/issues/64)) ([11bc915](https://github.com/nkzk/cooltainer/commit/11bc915320750e2da9d00884afb10d6e814a041e))
+* Update dependency homebrew/openshift-cli to v4.19.10 ([#65](https://github.com/nkzk/cooltainer/issues/65)) ([96d312b](https://github.com/nkzk/cooltainer/commit/96d312b22495a4cedb7ea3416dcd20af46152eac))
+* Update dependency homebrew/openshift-cli to v4.19.11 ([#67](https://github.com/nkzk/cooltainer/issues/67)) ([c63599f](https://github.com/nkzk/cooltainer/commit/c63599f57ddd6fea2933714aa5843bb3eec3e67f))
+* Update dependency homebrew/openshift-cli to v4.19.12 ([#68](https://github.com/nkzk/cooltainer/issues/68)) ([be2f153](https://github.com/nkzk/cooltainer/commit/be2f1537f93194c3f974397f85db8bd8435e9da8))
+* Update dependency homebrew/openshift-cli to v4.19.9 ([34996bb](https://github.com/nkzk/cooltainer/commit/34996bb5c89ac9bc68943331254d6416770dbaa8))
+* Update dependency kubevirt/kubevirt to v1.6.1 ([#69](https://github.com/nkzk/cooltainer/issues/69)) ([945d275](https://github.com/nkzk/cooltainer/commit/945d275aba4d32db9c5041d54edde181d5838d6c))
+* Update dependency nats-io/natscli to v0.3.0 ([#70](https://github.com/nkzk/cooltainer/issues/70)) ([7bfd998](https://github.com/nkzk/cooltainer/commit/7bfd9984349cf7854c15bd43666db2752587c794))
+* Update dependency nats-io/nsc to v2.12.0 ([#71](https://github.com/nkzk/cooltainer/issues/71)) ([7e7b00c](https://github.com/nkzk/cooltainer/commit/7e7b00c7b048f11350d71ed202bc075a57cd5f3b))
+* Update docker/build-push-action digest to cb8fc75 ([38ffc3a](https://github.com/nkzk/cooltainer/commit/38ffc3a59e66ba0e9dd82e2810e1651b0fd35c73))
+* Update docker/login-action digest to 5b7b28b ([9b2eef5](https://github.com/nkzk/cooltainer/commit/9b2eef502ed71ce1209a3269d994b3a032d83278))
+
 ## [0.1.11](https://github.com/nkzk/cooltainer/compare/v0.1.10...v0.1.11) (2025-08-24)
 
 
