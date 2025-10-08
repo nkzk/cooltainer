@@ -36,7 +36,7 @@ ARG MC_VERSION=RELEASE.2025-05-21T01-59-54Z
 ARG KUBECTL_VERSION=v1.30.2
 
 # renovate: datasource=repology depName=alpine_3_22/curl versioning=loose
-ARG CURL_VERSION=8.14.1-r1
+ARG CURL_VERSION=8.14.1-r2
 
 # renovate: datasource=repology depName=alpine_3_22/wget versioning=loose
 ARG WGET_VERSION=1.25.0-r1
