@@ -26,7 +26,7 @@ COPY --from=go /go/bin/nats /usr/local/bin/nats
 ARG OC_VERSION=4.19.12
 
 # renovate: datasource=github-tags depName=kubevirt/kubevirt versioning=loose
-ARG VIRTCTL_VERSION=v1.6.1
+ARG VIRTCTL_VERSION=v1.6.2
 
 
 # renovate: datasource=github-releases depName=minio/mc versioning=loose
