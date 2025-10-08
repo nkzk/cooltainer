@@ -66,7 +66,7 @@ ARG GCOMPAT_VERSION=1.1.0-r4
 ARG TRACEROUTE_VERSION=2.1.6-r0
 
 # renovate: datasource=repology depName=alpine_3_22/openssh versioning=loose
-ARG OPENSSH_VERSION=10.0_p1-r7
+ARG OPENSSH_VERSION=10.0_p1-r9
 
 # renovate: datasource=repology depName=alpine_3_22/net-tools versioning=loose
 ARG NETTOOLS_VERSION=2.10-r3
