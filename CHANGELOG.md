@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.13](https://github.com/nkzk/cooltainer/compare/v0.1.12...v0.1.13) (2025-10-08)
+
+
+### Bug Fixes
+
+* Update dependency alpine_3_22/curl to v8.14.1-r2 ([#74](https://github.com/nkzk/cooltainer/issues/74)) ([6dab80e](https://github.com/nkzk/cooltainer/commit/6dab80eb469776452b025ce559f5605bbc02936f))
+* Update dependency alpine_3_22/openssh to v10.0_p1-r9 ([#75](https://github.com/nkzk/cooltainer/issues/75)) ([dfca13e](https://github.com/nkzk/cooltainer/commit/dfca13ed2d04c1b89c8cf8f1d91a89870b15be7a))
+* Update dependency homebrew/openshift-cli to v4.19.14 ([#76](https://github.com/nkzk/cooltainer/issues/76)) ([5459610](https://github.com/nkzk/cooltainer/commit/54596108ed8be32a21fa2da57ab1ad4fbc453143))
+* Update dependency kubevirt/kubevirt to v1.6.2 ([#77](https://github.com/nkzk/cooltainer/issues/77)) ([142fb13](https://github.com/nkzk/cooltainer/commit/142fb13a8857f5800c2ee71c85f3f51c30d6bea4))
+
 ## [0.1.12](https://github.com/nkzk/cooltainer/compare/v0.1.11...v0.1.12) (2025-09-24)
 
 
