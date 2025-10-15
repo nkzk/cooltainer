@@ -57,7 +57,7 @@ ARG BASH_VERSION=5.2.37-r0
 ARG COREUTILS_VERSION=9.7-r1
 
 # renovate: datasource=repology depName=alpine_3_22/ca-certificates versioning=loose
-ARG CA_CERTIFICATES_VERSION=20250619-r0
+ARG CA_CERTIFICATES_VERSION=20250911-r0
 
 # renovate: datasource=repology depName=alpine_3_22/gcompat versioning=loose
 ARG GCOMPAT_VERSION=1.1.0-r4
