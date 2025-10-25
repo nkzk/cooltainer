@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.1.13](https://github.com/nkzk/cooltainer/compare/v0.1.12...v0.1.13) (2025-10-25)
+
+
+### Bug Fixes
+
+* Update alpine Docker tag to v3.22.2 ([dbbd524](https://github.com/nkzk/cooltainer/commit/dbbd524fd43fdbc97214c5f71088ed1745ff6bb3))
+* Update dependency alpine_3_22/ca-certificates to v20250911 ([64959f6](https://github.com/nkzk/cooltainer/commit/64959f6417884913a9ac113fbe412ba72826aaf5))
+* Update dependency alpine_3_22/curl to v8.14.1-r2 ([#74](https://github.com/nkzk/cooltainer/issues/74)) ([6dab80e](https://github.com/nkzk/cooltainer/commit/6dab80eb469776452b025ce559f5605bbc02936f))
+* Update dependency alpine_3_22/openssh to v10.0_p1-r9 ([#75](https://github.com/nkzk/cooltainer/issues/75)) ([dfca13e](https://github.com/nkzk/cooltainer/commit/dfca13ed2d04c1b89c8cf8f1d91a89870b15be7a))
+* Update dependency alpine_3_22/rclone to v1.69.3-r3 ([#80](https://github.com/nkzk/cooltainer/issues/80)) ([44e4159](https://github.com/nkzk/cooltainer/commit/44e41597b950cbf46074e6e45bfe58cfb6130656))
+* Update dependency homebrew/openshift-cli to v4.19.14 ([#76](https://github.com/nkzk/cooltainer/issues/76)) ([5459610](https://github.com/nkzk/cooltainer/commit/54596108ed8be32a21fa2da57ab1ad4fbc453143))
+* Update dependency homebrew/openshift-cli to v4.20.0 ([eed8f8b](https://github.com/nkzk/cooltainer/commit/eed8f8b6389167780d18f3e4552125210aa2123e))
+* Update dependency kubevirt/kubevirt to v1.6.2 ([#77](https://github.com/nkzk/cooltainer/issues/77)) ([142fb13](https://github.com/nkzk/cooltainer/commit/142fb13a8857f5800c2ee71c85f3f51c30d6bea4))
+* Update docker/build-push-action digest to 9e436ba ([48ee110](https://github.com/nkzk/cooltainer/commit/48ee1106865e7d2a3be58ddfa8429d2a026a90ab))
+* Update docker/login-action digest to 28fdb31 ([b1e2d3c](https://github.com/nkzk/cooltainer/commit/b1e2d3cc6d9de3b6405dd11caa7456f2db078bf6))
+
 ## [0.1.12](https://github.com/nkzk/cooltainer/compare/v0.1.11...v0.1.12) (2025-09-24)
 
 
