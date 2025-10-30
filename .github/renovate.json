@@ -12,6 +12,7 @@
   "schedule": [
     "before 5pm on Wednesday"
   ],
+  "minimumReleaseAge": "14 days",
   "commitMessagePrefix": "fix:",
   "customManagers": [
     {
