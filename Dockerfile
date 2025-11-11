@@ -23,7 +23,7 @@ COPY --from=go /go/bin/nats-top /usr/local/bin/nats-top
 COPY --from=go /go/bin/nats /usr/local/bin/nats
 
 # renovate: datasource=repology depName=homebrew/openshift-cli versioning=loose
-ARG OC_VERSION=4.20.0
+ARG OC_VERSION=4.20.1
 
 # renovate: datasource=github-tags depName=kubevirt/kubevirt versioning=loose
 ARG VIRTCTL_VERSION=v1.7.0
