@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.14](https://github.com/nkzk/cooltainer/compare/v0.1.13...v0.1.14) (2025-12-17)
+
+
+### Bug Fixes
+
+* Update actions/checkout action to v6 ([5336089](https://github.com/nkzk/cooltainer/commit/533608965ff2781f63bd14e983bccd4de652171b))
+* Update actions/create-github-app-token digest to 29824e6 ([c6763e2](https://github.com/nkzk/cooltainer/commit/c6763e2650eb21133a26f755498018e80b834bad))
+* Update dependency homebrew/openshift-cli to v4.20.1 ([bf3fec8](https://github.com/nkzk/cooltainer/commit/bf3fec8ede6024e3daaabdc92571bbff06ba172d))
+* Update dependency kubevirt/kubevirt to v1.7.0 ([977b0dc](https://github.com/nkzk/cooltainer/commit/977b0dc9859c61b0777d0267f03dc3bf9563069e))
+* Update googleapis/release-please-action digest to 16a9c90 ([a1e9cb6](https://github.com/nkzk/cooltainer/commit/a1e9cb61d5614f0e547b2ee2a2803771798a7874))
+
 ## [0.1.13](https://github.com/nkzk/cooltainer/compare/v0.1.12...v0.1.13) (2025-10-25)
 
 
