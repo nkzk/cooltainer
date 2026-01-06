@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.15](https://github.com/nkzk/cooltainer/compare/v0.1.14...v0.1.15) (2026-01-06)
+
+
+### Bug Fixes
+
+* Update alpine Docker tag to v3.23.2 ([23effe6](https://github.com/nkzk/cooltainer/commit/23effe6ba1cd3a0a4c548c7f5fce096f6a559e40))
+
 ## [0.1.14](https://github.com/nkzk/cooltainer/compare/v0.1.13...v0.1.14) (2025-12-17)
 
 
