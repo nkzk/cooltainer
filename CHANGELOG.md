@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.15](https://github.com/nkzk/cooltainer/compare/v0.1.14...v0.1.15) (2026-03-21)
+
+
+### Bug Fixes
+
+* Update actions/checkout digest to de0fac2 ([#95](https://github.com/nkzk/cooltainer/issues/95)) ([885c8c4](https://github.com/nkzk/cooltainer/commit/885c8c4c19ab971298b1172c95c98d97c0de720c))
+* Update actions/create-github-app-token digest to fee1f7d ([#98](https://github.com/nkzk/cooltainer/issues/98)) ([46fe184](https://github.com/nkzk/cooltainer/commit/46fe18481d3a0d1d5c68d925e106734dced13980))
+* Update alpine Docker tag to v3.23.2 ([23effe6](https://github.com/nkzk/cooltainer/commit/23effe6ba1cd3a0a4c548c7f5fce096f6a559e40))
+* Update dependency kubevirt/kubevirt to v1.7.1 ([#99](https://github.com/nkzk/cooltainer/issues/99)) ([31a1fe5](https://github.com/nkzk/cooltainer/commit/31a1fe5cf41ea880e047058127f95976611c6935))
+* Update dependency nats-io/natscli to v0.3.1 ([#97](https://github.com/nkzk/cooltainer/issues/97)) ([b235e60](https://github.com/nkzk/cooltainer/commit/b235e60c6879644e0d4f9d18cb79e5b317c2f29b))
+* Update docker.io/library/alpine Docker tag to v3.23 ([#93](https://github.com/nkzk/cooltainer/issues/93)) ([57a8351](https://github.com/nkzk/cooltainer/commit/57a8351e2d4fba6d4dfa354e0cf09e472cc2e581))
+* Update docker/build-push-action digest to de30867 ([#94](https://github.com/nkzk/cooltainer/issues/94)) ([778aab8](https://github.com/nkzk/cooltainer/commit/778aab854f34bbeb211d05e396af98503121fc6f))
+* Update docker/login-action digest to da5b89b ([#90](https://github.com/nkzk/cooltainer/issues/90)) ([cdfa655](https://github.com/nkzk/cooltainer/commit/cdfa65577e9ac3da61f82ef2a8de9a1b2611c012))
+
 ## [0.1.14](https://github.com/nkzk/cooltainer/compare/v0.1.13...v0.1.14) (2025-12-17)
 
 
