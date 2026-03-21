@@ -31,7 +31,7 @@ jobs:
         run: git lfs checkout
 
       - name: Log in to the Container registry
-        uses: docker/login-action@28fdb31ff34708d19615a74d67103ddc2ea9725c
+        uses: docker/login-action@da5b89b92c1be57a07eeed1334a0728b94145654
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
