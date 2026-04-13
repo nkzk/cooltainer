@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.16](https://github.com/nkzk/cooltainer/compare/v0.1.15...v0.1.16) (2026-04-13)
+
+
+### Bug Fixes
+
+* Update dependency kubevirt/kubevirt to v1.8.1 ([#103](https://github.com/nkzk/cooltainer/issues/103)) ([3c3b2f4](https://github.com/nkzk/cooltainer/commit/3c3b2f40d603b3cb3770dfba894191a526324d75))
+* Update dependency nats-io/natscli to v0.3.2 ([#105](https://github.com/nkzk/cooltainer/issues/105)) ([d94b6c3](https://github.com/nkzk/cooltainer/commit/d94b6c3931c7b55658c4d95c4fa5bbe3e02b9dbc))
+
 ## [0.1.15](https://github.com/nkzk/cooltainer/compare/v0.1.14...v0.1.15) (2026-03-21)
 
 
