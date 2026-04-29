@@ -35,60 +35,6 @@ ARG MC_VERSION=RELEASE.2025-05-21T01-59-54Z
 # renovate: datasource=github-tags depName=kubernetes/kubectl versioning=loose
 ARG KUBECTL_VERSION=v1.30.2
 
-# renovate: datasource=repology depName=alpine_3_23/curl versioning=loose
-ARG CURL_VERSION=8.14.1-r2
-
-# renovate: datasource=repology depName=alpine_3_23/wget versioning=loose
-ARG WGET_VERSION=1.25.0-r1
-
-# renovate: datasource=repology depName=alpine_3_23/figlet versioning=loose
-ARG FIGLET_VERSION=2.2.5-r3
-
-# renovate: datasource=repology depName=alpine_3_23/jq versioning=loose
-ARG JQ_VERSION=1.8.0-r0
-
-# renovate: datasource=repology depName=alpine_3_23/tar versioning=loose
-ARG TAR_VERSION=1.35-r3
-
-# renovate: datasource=repology depName=alpine_3_23/bash versioning=loose
-ARG BASH_VERSION=5.2.37-r0
-
-# renovate: datasource=repology depName=alpine_3_23/coreutils versioning=loose
-ARG COREUTILS_VERSION=9.7-r1
-
-# renovate: datasource=repology depName=alpine_3_23/ca-certificates versioning=loose
-ARG CA_CERTIFICATES_VERSION=20250911-r0
-
-# renovate: datasource=repology depName=alpine_3_23/gcompat versioning=loose
-ARG GCOMPAT_VERSION=1.1.0-r4
-
-# renovate: datasource=repology depName=alpine_3_23/traceroute versioning=loose
-ARG TRACEROUTE_VERSION=2.1.6-r0
-
-# renovate: datasource=repology depName=alpine_3_23/openssh versioning=loose
-ARG OPENSSH_VERSION=10.0_p1-r9
-
-# renovate: datasource=repology depName=alpine_3_23/net-tools versioning=loose
-ARG NETTOOLS_VERSION=2.10-r3
-
-# renovate: datasource=repology depName=alpine_3_23/netcat-openbsd versioning=loose
-ARG NETCAT_OPENBSD_VERSION=1.229.1-r0
-
-# renovate: datasource=repology depName=alpine_3_23/freeradius-utils versioning=loose
-ARG FREERADIUS_UTILS_VERSION=3.0.27-r1
-
-# renovate: datasource=repology depName=alpine_3_23/tzdata versioning=loose
-ARG TZDATA_VERSION=2025b-r0
-
-# renovate: datasource=repology depName=alpine_3_23/vim versioning=loose
-ARG VIM_VERSION=9.1.1566-r0
-
-# renovate: datasource=repology depName=alpine_3_23/rclone versioning=loose
-ARG RCLONE_VERSION=1.69.3-r3
-
-# renovate: datasource=repology depName=alpine_3_23/postgresql16 versioning=loose
-ARG POSTGRESQL_VERSION=16.10-r0
-
 WORKDIR /home/cooltainer
 
 # rootless shenanigans
@@ -122,24 +68,24 @@ RUN wget https://github.com/kubevirt/kubevirt/releases/download/${VIRTCTL_VERSIO
 
 # install packages
 RUN apk add --no-cache \
-    curl=${CURL_VERSION} \
-    wget=${WGET_VERSION} \
-    figlet=${FIGLET_VERSION} \
-    jq=${JQ_VERSION} \
-    tar=${TAR_VERSION} \
-    bash=${BASH_VERSION} \
-    coreutils=${COREUTILS_VERSION} \
-    ca-certificates=${CA_CERTIFICATES_VERSION} \
-    gcompat=${GCOMPAT_VERSION} \
-    traceroute=${TRACEROUTE_VERSION} \
-    openssh=${OPENSSH_VERSION} \
-    net-tools=${NETTOOLS_VERSION} \
-    netcat-openbsd=${NETCAT_OPENBSD_VERSION} \
-    freeradius-utils=${FREERADIUS_UTILS_VERSION} \
-    tzdata=${TZDATA_VERSION} \
-    vim=${VIM_VERSION} \
-    rclone=${RCLONE_VERSION} \
-    postgresql16=${POSTGRESQL_VERSION}
+    bash \
+    ca-certificates \
+    coreutils \
+    curl \
+    figlet \
+    freeradius-utils \
+    gcompat \
+    jq \
+    net-tools \
+    netcat-openbsd \
+    openssh \
+    postgresql16 \
+    rclone \
+    tar \
+    traceroute \
+    tzdata \
+    vim \
+    wget
 
 # install kubectl
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl && \
