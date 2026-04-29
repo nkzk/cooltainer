@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.17](https://github.com/nkzk/cooltainer/compare/v0.1.16...v0.1.17) (2026-04-29)
+
+
+### Bug Fixes
+
+* remove alpine package pinning ([#111](https://github.com/nkzk/cooltainer/issues/111)) ([d8e74d1](https://github.com/nkzk/cooltainer/commit/d8e74d1fbfbf638d14b328d7af2a0f5260c2aca4))
+* remove oc cli to reduce img size by 315mb. use kubectl instead ([#110](https://github.com/nkzk/cooltainer/issues/110)) ([61fd475](https://github.com/nkzk/cooltainer/commit/61fd47517c3eaa5d4a0f20e497cd0e723665097c))
+* Update actions/create-github-app-token action to v3 ([#104](https://github.com/nkzk/cooltainer/issues/104)) ([f169d2a](https://github.com/nkzk/cooltainer/commit/f169d2ac55eaf164e43e22f74e200ef9fa74b108))
+* Update actions/create-github-app-token digest to 1b10c78 ([#109](https://github.com/nkzk/cooltainer/issues/109)) ([48eee2c](https://github.com/nkzk/cooltainer/commit/48eee2c5709e2de9fa94e160bc59b207bf053059))
+* Update alpine Docker tag to v3.23.3 ([#96](https://github.com/nkzk/cooltainer/issues/96)) ([0dd5f3b](https://github.com/nkzk/cooltainer/commit/0dd5f3b27b40e68acf3d3d8e6fd2bbce0ee88f59))
+* Update googleapis/release-please-action digest to 5c625bf ([#106](https://github.com/nkzk/cooltainer/issues/106)) ([0f4db0d](https://github.com/nkzk/cooltainer/commit/0f4db0d7848a5d6d76b9135cb45bcb76c33e8f67))
+
 ## [0.1.16](https://github.com/nkzk/cooltainer/compare/v0.1.15...v0.1.16) (2026-04-22)
 
 
