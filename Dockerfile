@@ -151,15 +151,6 @@ RUN curl https://dl.min.io/client/mc/release/linux-amd64/archive/mc.${MC_VERSION
     chmod +x mc && \
     mv ./mc /usr/local/bin
 
-# install oc
-RUN curl https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/${OC_VERSION}/oc-mirror.tar.gz -o oc.tar.gz && \
-    tar -xzvf oc.tar.gz && \
-    mv oc-mirror oc && \
-    chmod +x oc && mv oc /usr/local/bin && \
-    chgrp -R 0 /usr/local/bin/oc && \
-    chmod -R g+rwX /usr/local/bin/oc && \
-    rm oc.tar.gz
-
 # profile
 COPY profile.sh /etc/profile.d
 RUN chmod +x /etc/profile.d/profile.sh
