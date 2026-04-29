@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.18](https://github.com/nkzk/cooltainer/compare/v0.1.17...v0.1.18) (2026-04-29)
+
+
+### Bug Fixes
+
+* **deps:** bump go to 1.26 ([ee77654](https://github.com/nkzk/cooltainer/commit/ee77654b9e3f2cc608296ab5cb37a9b21c6e6e7b))
+
 ## [0.1.17](https://github.com/nkzk/cooltainer/compare/v0.1.16...v0.1.17) (2026-04-29)
 
 
