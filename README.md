@@ -5,7 +5,6 @@ Container with useful tools for developers and platform-engineers.
 Made to run without issues in rootless environments like OpenShift.
 
 Contains the following tools:
-- oc (openshift-cli)
 - kubectl
 - virtctl
 - nats cli/nsc/top
