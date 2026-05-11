@@ -9,7 +9,7 @@ spec:
     runAsNonRoot: true
   containers:
     - name: debug
-      image: "ghcr.io/nkzk/cooltainer:latest"
+      image: "ghcr.io/william-rom/cooltainer:latest"
       resources:
         requests:
           cpu: 5m

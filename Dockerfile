@@ -83,6 +83,13 @@ RUN curl -Lo k9s.tar.gz https://github.com/derailed/k9s/releases/latest/download
     chmod +x /usr/local/bin/k9s && \
     rm k9s.tar.gz
 
+# opencode
+RUN curl -Lo opencode.tar.gz https://github.com/sst/opencode/releases/latest/download/opencode-linux-x64-musl.tar.gz && \
+    tar -xzf opencode.tar.gz opencode && \
+    mv opencode /usr/local/bin/opencode && \
+    chmod +x /usr/local/bin/opencode && \
+    rm opencode.tar.gz
+
 # user
 RUN addgroup -S cooltainer && adduser -S cooltainer -G cooltainer -u 1234
 ENV HOME=/home/cooltainer
