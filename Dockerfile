@@ -10,7 +10,7 @@ ARG NSC_VERSION=v2.12.2
 ARG NATSTOP_VERSION=v0.6.4
 
 # renovate: datasource=github-releases depName=nats-io/natscli versioning=loose
-ARG NATSCLI_VERSION=v0.3.2
+ARG NATSCLI_VERSION=v0.4.0
 
 RUN go install -ldflags="-X main.version=${NSC_VERSION}" github.com/nats-io/nsc/v2@${NSC_VERSION} && \
     go install github.com/nats-io/nats-top@${NATSTOP_VERSION} && \
