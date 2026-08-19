@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.1.19](https://github.com/nkzk/cooltainer/compare/v0.1.18...v0.1.19) (2026-08-19)
+
+
+### Bug Fixes
+
+* Update actions/checkout action to v7 ([#126](https://github.com/nkzk/cooltainer/issues/126)) ([0c6f091](https://github.com/nkzk/cooltainer/commit/0c6f091984ab1d08446288052b377e9251b9427c))
+* Update actions/create-github-app-token digest to bcd2ba4 ([#119](https://github.com/nkzk/cooltainer/issues/119)) ([c0241f4](https://github.com/nkzk/cooltainer/commit/c0241f4d92dd0f3d5c02927e7792f077480e8996))
+* Update alpine Docker tag to v3.24.1 ([#115](https://github.com/nkzk/cooltainer/issues/115)) ([50304ea](https://github.com/nkzk/cooltainer/commit/50304ea3d0d64d290a2114515a369079ee94504a))
+* Update dependency kubevirt/kubevirt to v1.8.2 ([#116](https://github.com/nkzk/cooltainer/issues/116)) ([f716fcf](https://github.com/nkzk/cooltainer/commit/f716fcfa126fb6ee8b99f3d59677daba7273d054))
+* Update dependency kubevirt/kubevirt to v1.8.3 ([#122](https://github.com/nkzk/cooltainer/issues/122)) ([1ecbbd9](https://github.com/nkzk/cooltainer/commit/1ecbbd94d1ffe7c901a5bcfe4ca00c2a00d02938))
+* Update dependency kubevirt/kubevirt to v1.8.4 ([#125](https://github.com/nkzk/cooltainer/issues/125)) ([1a07487](https://github.com/nkzk/cooltainer/commit/1a0748778b57a995f8f4f604f31a5661fd249c12))
+* Update dependency kubevirt/kubevirt to v1.9.0 ([#127](https://github.com/nkzk/cooltainer/issues/127)) ([792deb4](https://github.com/nkzk/cooltainer/commit/792deb4a15ac2643a175036011cceb6c4bb81150))
+* Update dependency nats-io/natscli to v0.4.0 ([#123](https://github.com/nkzk/cooltainer/issues/123)) ([74e0e7d](https://github.com/nkzk/cooltainer/commit/74e0e7df7888c2b2b088b1344e66d0becae0ef67))
+* Update dependency nats-io/nsc to v2.15.0 ([#124](https://github.com/nkzk/cooltainer/issues/124)) ([c182bde](https://github.com/nkzk/cooltainer/commit/c182bdee71e6eac59da8a4fe283429b6026eb64c))
+* Update googleapis/release-please-action action to v5 ([#120](https://github.com/nkzk/cooltainer/issues/120)) ([909a314](https://github.com/nkzk/cooltainer/commit/909a3145bc21eeb1d6b546df090d27a2d8b5c975))
+
 ## [0.1.18](https://github.com/nkzk/cooltainer/compare/v0.1.17...v0.1.18) (2026-04-29)
 
 
