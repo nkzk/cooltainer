@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.21](https://github.com/nkzk/cooltainer/compare/v0.1.20...v0.1.21) (2026-11-11)
+
+
+### Bug Fixes
+
+* Update alpine Docker tag to v3.24.3 ([#134](https://github.com/nkzk/cooltainer/issues/134)) ([3f7c7b1](https://github.com/nkzk/cooltainer/commit/3f7c7b16ceddcfea9e1bc65d8c6a0090fb6ca83b))
+* Update dependency kubevirt/kubevirt to v1.9.1 ([#132](https://github.com/nkzk/cooltainer/issues/132)) ([9bededd](https://github.com/nkzk/cooltainer/commit/9bededd222d30f35159e7e634b75c633716a18d5))
+* Update dependency nats-io/nats-top to v0.6.5 ([#135](https://github.com/nkzk/cooltainer/issues/135)) ([29b1b2e](https://github.com/nkzk/cooltainer/commit/29b1b2eb8fa607dc07a1a5ac2a6b05bcc101cc0d))
+* Update dependency nats-io/natscli to v0.5.1 ([#136](https://github.com/nkzk/cooltainer/issues/136)) ([b626f41](https://github.com/nkzk/cooltainer/commit/b626f41b6dfc94c1d3c4fb88f254cd5739348dcc))
+
 ## [0.1.20](https://github.com/nkzk/cooltainer/compare/v0.1.19...v0.1.20) (2026-10-07)
 
 
